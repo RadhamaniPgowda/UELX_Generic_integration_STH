@@ -33,4 +33,4 @@ jobs:
       - name: Run a multi-line script
         run: |
           echo "execute STH workflow"
-          npm install -g jasmine-node && jasmine-node TestSTH.js
+          node TestSTH.js
