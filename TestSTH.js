@@ -126,15 +126,15 @@ let idexec = text["id"];
 
   async function calls(){
     let  rescsrf = await fetchcsrf();
-    let id = await create(rescsrf);
-    let exec = await execution(rescsrf,id);
+    //let id = await create(rescsrf);
+    //let exec = await execution(rescsrf,id);
 
-    setTimeout(function() {
+    /*setTimeout(function() {
         //your code to be executed after 1 second
       }, 10000);
 
 
-    await getexecutions(rescsrf,id, exec)
+    await getexecutions(rescsrf,id, exec)*/
   }
   
 
