@@ -15,17 +15,7 @@
 
     let createres;
    const res =  await fetch("https://sapa7d9108fa.hana.ondemand.com/translationhub/api/v2/domains", requestOptions)
-//    .then( rescsrf => {
-//       responsecsrf = rescsrf.headers.get("X-CSRF-Token");
-//       console.log("csrf:"+responsecsrf);
-
-//     //   let createres =  create(responsecsrf1);
-//     //    execution(responsecsrf1,createres);
-//     } 
-//   )
-//   .then(createres=create(responsecsrf1))
-//   .then(execution(responsecsrf1,createres));
-console.log("csrf:"+res.headers.get("X-CSRF-Token"));
+   console.log("csrf:"+res.headers.get("X-CSRF-Token"));
     return res;
   }
   
@@ -71,7 +61,7 @@ console.log("csrf:"+res.headers.get("X-CSRF-Token"));
   let res1 = await fetch("https://sapa7d9108fa.hana.ondemand.com/translationhub/api/v2/gitProjects", requestOptions)
   let text = await res1.json();
 
-let id = text["id"];
+  let id = text["id"];
   console.log("create res  :"+id);
   return id;
   }
@@ -94,17 +84,11 @@ let id = text["id"];
       body: raw,
       redirect: 'follow'
     };
-    // let text =  await createres.json();
-
-    // let id = text["id"];
     let resultexe = await fetch("https://sapa7d9108fa.hana.ondemand.com/translationhub/api/v2/gitProjects/"+id+"/executions", requestOptions)
-    //   .then(response => response.text())
-    //   .then(result => console.log(result))
-    //   .catch(error => console.log('error', error));
     let text = await resultexe.json();
 
-let idexec = text["id"];
-  console.log("create res  :"+idexec);          
+    let idexec = text["id"];
+    console.log("create res  :"+idexec);          
     return idexec;
   }
   
@@ -131,7 +115,7 @@ let idexec = text["id"];
 
     setTimeout(function() {
         //your code to be executed after 1 second
-      }, 10000);
+      }, 100000);
 
 
     await getexecutions(rescsrf,id, exec)
