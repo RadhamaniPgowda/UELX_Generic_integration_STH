@@ -7,8 +7,10 @@ on:
   # Triggers the workflow on push or pull request events but only for the "master" branch
   push:
     branches: [ "master" ]
+    paths: ['src/test.properties']
   pull_request:
     branches: [ "master" ]
+    paths: ['src/test.properties']
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -24,15 +26,13 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-      - uses: dorny/paths-filter@v2
-        id: filter
-        with:
-              filters: |
-                src:
-                - 'src/test.properties'
+
+      # Runs a single command using the runners shell
+      #- name: Run a one-line script
+      #  run: echo Hello, world!
 
       # Runs a set of commands using the runners shell
-      - name: execute STH workflow
+      - name: Run a multi-line script
         run: |
-          if: steps.filter.outputs.src == 'true'
+          echo "execute STH workflow"
           node TestSTH.js
