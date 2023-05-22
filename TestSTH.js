@@ -14,7 +14,7 @@
     };
 
     let createres;
-   const res =  await fetch("https://sapa7d9108fa.hana.ondemand.com/translationhub/api/v2/domains", requestOptions)
+   const res =  await fetch("https://saps1cbb8a8f.eu3.hana.ondemand.com/translationhub/api/v2/domains", requestOptions)
    console.log("csrf:"+res.headers.get("X-CSRF-Token"));
     return res;
   }
@@ -29,7 +29,7 @@
   
   
     var raw = JSON.stringify({
-      "name": "Cloud app in GitHub",
+      "name": "Cloud test",
       "sourceLanguage": "en",
       "targetLanguages": [
         "it",
@@ -48,7 +48,7 @@
       "credentials": {
         "user": "RadhamaniPgowda",
         "email": "radhamanip5@gmail.com",
-        "password": "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"
+        "password": "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"
       }
     });
     
@@ -58,7 +58,7 @@
       body: raw,
     };
     
-  let res1 = await fetch("https://sapa7d9108fa.hana.ondemand.com/translationhub/api/v2/gitProjects", requestOptions)
+  let res1 = await fetch("https://saps1cbb8a8f.eu3.hana.ondemand.com/translationhub/api/v2/gitProjects", requestOptions)
   let text = await res1.json();
 
   let id = text["id"];
@@ -84,7 +84,7 @@
       body: raw,
       redirect: 'follow'
     };
-    let resultexe = await fetch("https://sapa7d9108fa.hana.ondemand.com/translationhub/api/v2/gitProjects/"+id+"/executions", requestOptions)
+    let resultexe = await fetch("https://saps1cbb8a8f.eu3.hana.ondemand.com/translationhub/api/v2/gitProjects/"+id+"/executions", requestOptions)
     let text = await resultexe.json();
 
     let idexec = text["id"];
@@ -103,7 +103,7 @@
       redirect: 'follow'
     };
     
-   let res = await fetch("https://sapa7d9108fa.hana.ondemand.com/translationhub/api/v2/gitProjects/"+projid+"/executions/"+execid, requestOptions)
+   let res = await fetch("https://saps1cbb8a8f.eu3.hana.ondemand.com/translationhub/api/v2/gitProjects/"+projid+"/executions/"+execid, requestOptions)
    console.log(await res.text());
 
   }
@@ -115,7 +115,7 @@
 
     setTimeout(function() {
         //your code to be executed after 1 second
-      }, 300000);
+      }, 100000);
 
 
     await getexecutions(rescsrf,id, exec)
