@@ -58,7 +58,7 @@ console.log("csrf:"+res.headers.get("X-CSRF-Token"));
       "credentials": {
         "user": "RadhamaniPgowda",
         "email": "radhamanip5@gmail.com",
-        "password": "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"
+        "password": "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"
       }
     });
     
