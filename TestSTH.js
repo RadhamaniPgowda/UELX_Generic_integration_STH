@@ -14,7 +14,7 @@
     };
 
     let createres;
-   const res =  await fetch("https://saptyow6ag1js.int.sap.eu2.hana.ondemand.com/translationhub/api/v2/domains", requestOptions)
+   const res =  await fetch("https://sapa7d9108fa.hana.ondemand.com/translationhub/api/v2/domains", requestOptions)
 //    .then( rescsrf => {
 //       responsecsrf = rescsrf.headers.get("X-CSRF-Token");
 //       console.log("csrf:"+responsecsrf);
