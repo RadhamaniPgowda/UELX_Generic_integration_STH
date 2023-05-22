@@ -68,7 +68,7 @@ console.log("csrf:"+res.headers.get("X-CSRF-Token"));
       body: raw,
     };
     
-  let res1 = await fetch("https://saptyow6ag1js.int.sap.eu2.hana.ondemand.com/translationhub/api/v2/gitProjects", requestOptions)
+  let res1 = await fetch("https://sapa7d9108fa.hana.ondemand.com/translationhub/api/v2/gitProjects", requestOptions)
   let text = await res1.json();
 
 let id = text["id"];
@@ -97,7 +97,7 @@ let id = text["id"];
     // let text =  await createres.json();
 
     // let id = text["id"];
-    let resultexe = await fetch("https://saptyow6ag1js.int.sap.eu2.hana.ondemand.com/translationhub/api/v2/gitProjects/"+id+"/executions", requestOptions)
+    let resultexe = await fetch("https://sapa7d9108fa.hana.ondemand.com/translationhub/api/v2/gitProjects/"+id+"/executions", requestOptions)
     //   .then(response => response.text())
     //   .then(result => console.log(result))
     //   .catch(error => console.log('error', error));
@@ -119,22 +119,22 @@ let idexec = text["id"];
       redirect: 'follow'
     };
     
-   let res = await fetch("https://saptyow6ag1js.int.sap.eu2.hana.ondemand.com/translationhub/api/v2/gitProjects/"+projid+"/executions/"+execid, requestOptions)
+   let res = await fetch("https://sapa7d9108fa.hana.ondemand.com/translationhub/api/v2/gitProjects/"+projid+"/executions/"+execid, requestOptions)
    console.log(await res.text());
 
   }
 
   async function calls(){
     let  rescsrf = await fetchcsrf();
-    //let id = await create(rescsrf);
-    //let exec = await execution(rescsrf,id);
+    let id = await create(rescsrf);
+    let exec = await execution(rescsrf,id);
 
-    /*setTimeout(function() {
+    setTimeout(function() {
         //your code to be executed after 1 second
       }, 10000);
 
 
-    await getexecutions(rescsrf,id, exec)*/
+    await getexecutions(rescsrf,id, exec)
   }
   
 
