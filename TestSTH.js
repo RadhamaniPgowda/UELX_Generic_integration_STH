@@ -48,7 +48,7 @@
       "credentials": {
         "user": "RadhamaniPgowda",
         "email": "radhamanip5@gmail.com",
-        "password": "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"
+        "password": "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"
       }
     });
     
