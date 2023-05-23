@@ -30,7 +30,7 @@
   
   
     var raw = JSON.stringify({
-      "name": "Cloud app in GitHub",
+      "name": "Cloud app in GitHub",
       "sourceLanguage": "en",
       "targetLanguages": [
         "it",
@@ -180,16 +180,16 @@ let idexec = text["id"];
   async function calls(){
     let  rescsrf = await fetchcsrf();
     let id = await create(rescsrf);
-    //let exec = await executionpull(rescsrf,id);
+    let exec = await executionpull(rescsrf,id);
     // await setTimeout(message,13000000);
-    //const myTimeout = await setTimeout(executionpush, 50000,rescsrf, id);
+    const myTimeout = await setTimeout(executionpush, 50000,rescsrf, id);
   
     // let execpush = await executionpush(rescsrf,id);
 
 
    
-  //await setTimeout(message,13000000);
-    //await getexecutions(rescsrf,id, exec)
+  await setTimeout(message,13000000);
+    await getexecutions(rescsrf,id, exec)
   }
   
 
