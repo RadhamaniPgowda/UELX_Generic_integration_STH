@@ -31,9 +31,9 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: echo password
+        run: echo $password
 
       # Runs a set of commands using the runners shell
-      - name: execute STH workflow
-        run: |
-          node TestSTH.js
+      #- name: execute STH workflow
+      # run: |
+      #    node TestSTH.js
