@@ -25,7 +25,9 @@
 //   )
 //   .then(createres=create(responsecsrf1))
 //   .then(execution(responsecsrf1,createres));
-console.log("my pat"+${{env.PAT}})
+let PAT =${{env.PAT}};
+console.log("my pat");
+console.log(PAT);
 console.log("csrf:"+res.headers.get("X-CSRF-Token"));
     return res;
   }
