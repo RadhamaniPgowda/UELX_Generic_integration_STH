@@ -1,5 +1,5 @@
 
-
+ //var password = env.process.password;
  async function fetchcsrf() {
     let responsecsrf;
     var myHeaders = new Headers();
@@ -15,20 +15,8 @@
 
     let createres;
    const res =  await fetch("https://saps1cbb8a8f.eu3.hana.ondemand.com/translationhub/api/v2/domains", requestOptions)
-//    .then( rescsrf => {
-//       responsecsrf = rescsrf.headers.get("X-CSRF-Token");
-//       console.log("csrf:"+responsecsrf);
 
-//     //   let createres =  create(responsecsrf1);
-//     //    execution(responsecsrf1,createres);
-//     } 
-//   )
-//   .then(createres=create(responsecsrf1))
-//   .then(execution(responsecsrf1,createres));
-let PAT =process.env.password
-console.log("my pat");
-console.log(PAT);
-console.log("csrf:"+res.headers.get("X-CSRF-Token"));
+   console.log("csrf:"+res.headers.get("X-CSRF-Token"));
     return res;
   }
   
@@ -59,9 +47,9 @@ console.log("csrf:"+res.headers.get("X-CSRF-Token"));
         }
       ],
       "credentials": {
-        "user": "I327358",
-        "email": "mallika.h.munilakshmana@sap.com",
-        "password": "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"
+        "user": "RadhamaniPgowda",
+        "email": "radhamanip5@gmail.com",
+        "password": "env.process.password"
       }
     });
     
@@ -90,9 +78,9 @@ let id = text["id"];
     var raw = JSON.stringify({
       "operation": "PULL_TRANSLATE",
       "credentials": {
-        "user": "I327358",
-        "email": "mallika.h.munilakshmana@sap.com",
-        "password": "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"
+        "user": "RadhamaniPgowda",
+        "email": "radhamanip5@gmail.com",
+        "password": "env.process.password"
       }
     });
     
@@ -143,9 +131,9 @@ let idexec = text["id"];
     var raw = JSON.stringify({
       "operation": "TRANSLATE_PUSH",
       "credentials": {
-        "user": "I327358",
-        "email": "mallika.h.munilakshmana@sap.com",
-        "password": "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"
+        "user": "RadhamaniPgowda",
+        "email": "radhamanip5@gmail.com",
+        "password": "env.process.password"
       }
     });
     
