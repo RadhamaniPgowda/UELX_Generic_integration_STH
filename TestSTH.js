@@ -113,7 +113,7 @@ console.log("create res  :"+idexec);
   return idexec;
 }
 
-async function getexecutions(rescsrf,projid, execid){
+/*async function getexecutions(rescsrf,projid, execid){
   var myHeaders = new Headers();
   myHeaders.append("Authorization", "Basic STMyNzM1ODpzd2VldG1vbTkwMDg3MTg1NzEk");
   myHeaders.append("X-CSRF-Token",rescsrf.headers.get("X-CSRF-Token"));
@@ -128,7 +128,7 @@ async function getexecutions(rescsrf,projid, execid){
  console.log(await res.text());
 
  
-}
+}*/
 
 async function executionpush(rescsrf,id){
   var myHeaders = new Headers();
@@ -155,6 +155,7 @@ async function executionpush(rescsrf,id){
   // let text =  await createres.json();
 
   // let id = text["id"];
+  console.log("project id in push to git"+id);
   let resultexe = await fetch("https://saps1cbb8a8f.eu3.hana.ondemand.com/translationhub/api/v2/gitProjects/"+id+"/executions", requestOptions)
   //   .then(response => response.text())
   //   .then(result => console.log(result))
@@ -166,7 +167,7 @@ console.log("create res push :"+idexec);
   return idexec;
 }
 
-async function getexecutions(rescsrf,projid, execid){
+/*async function getexecutions(rescsrf,projid, execid){
   var myHeaders = new Headers();
   myHeaders.append("Authorization", "Basic STMyNzM1ODpzd2VldG1vbTkwMDg3MTg1NzEk");
   myHeaders.append("X-CSRF-Token",rescsrf.headers.get("X-CSRF-Token"));
@@ -181,7 +182,7 @@ async function getexecutions(rescsrf,projid, execid){
  console.log(await res.text());
 
 }
-
+*/
 
 function message() {
   console.log("waiting..............")
@@ -197,7 +198,7 @@ async function calls(){
 
 
  
-await setTimeout(message,13000000);
-  await getexecutions(rescsrf,id, exec)
+//await setTimeout(message,13000000);
+  //await getexecutions(rescsrf,id, exec)
 }
 calls()
