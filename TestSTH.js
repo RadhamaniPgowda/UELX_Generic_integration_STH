@@ -27,7 +27,7 @@ async function fetchcsrf() {
 //   .then(execution(responsecsrf1,createres));
 console.log("csrf:"+res.headers.get("X-CSRF-Token"));
 console.log("**************************");
-console.log(process.env.PAT123);
+console.log(${process.env.PAT123});
   return res;
 }
 
