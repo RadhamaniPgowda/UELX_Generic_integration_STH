@@ -58,7 +58,7 @@ async function create(res) {
     "credentials": {
       "user": "RadhamaniPgowda",
       "email": "radhamanip5@gmail.com",
-      "password": "env.process.password"
+      "password": "process.env.MY_PAT"
     }
   });
   
@@ -89,7 +89,7 @@ async function executionpull(rescsrf,id){
     "credentials": {
       "user": "RadhamaniPgowda",
       "email": "radhamanip5@gmail.com",
-      "password": "env.process.password"
+      "password": "process.env.MY_PAT"
     }
   });
   
@@ -142,7 +142,7 @@ async function executionpush(rescsrf,id){
     "credentials": {
       "user": "RadhamaniPgowda",
       "email": "radhamanip5@gmail.com",
-      "password": "env.process.password"
+      "password": "process.env.MY_PAT"
     }
   });
   
