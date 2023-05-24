@@ -1,5 +1,5 @@
 
-
+require('dotenv').config();
 async function fetchcsrf() {
   let responsecsrf;
   var myHeaders = new Headers();
