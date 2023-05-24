@@ -6,11 +6,11 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the "master" branch
   push:
-    #branches: [ "master" ]
-    #paths: ['src/test.properties']
+    branches: [ "master" ]
+    paths: ['src/test.properties']
   pull_request:
     branches: [ "master" ]
-    #paths: ['src/test.properties']
+    paths: ['src/test.properties']
     
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
