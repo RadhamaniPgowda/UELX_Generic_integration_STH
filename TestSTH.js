@@ -61,7 +61,7 @@ async function create(res) {
     "credentials": {
       "user": "RadhamaniPgowda",
       "email": "radhamanip5@gmail.com",
-      "password": "process.env.MY_PAT"
+      "password": process.env.MY_PAT
     }
   });
   
@@ -92,7 +92,7 @@ async function executionpull(rescsrf,id){
     "credentials": {
       "user": "RadhamaniPgowda",
       "email": "radhamanip5@gmail.com",
-      "password": "process.env.MY_PAT"
+      "password": process.env.MY_PAT
     }
   });
   
@@ -136,6 +136,7 @@ console.log("create res  :"+idexec);
 async function executionpush(rescsrf,id){
   var myHeaders = new Headers();
   myHeaders.append("X-CSRF-Token",rescsrf.headers.get("X-CSRF-Token"));
+  var myHeaders = new Headers();
   myHeaders.append("Authorization", "Basic STMyNzM1ODpzd2VldG1vbTkwMDg3MTg1NzEk");
   myHeaders.append("Content-Type", "application/json");
   myHeaders.append("Cookie", rescsrf.headers.get("Set-Cookie"));
@@ -145,7 +146,7 @@ async function executionpush(rescsrf,id){
     "credentials": {
       "user": "RadhamaniPgowda",
       "email": "radhamanip5@gmail.com",
-      "password": "process.env.MY_PAT"
+      "password": process.env.MY_PAT
     }
   });
   
@@ -171,7 +172,6 @@ console.log("create res push :"+idexec);
 }
 
 /*async function getexecutions(rescsrf,projid, execid){
-  var myHeaders = new Headers();
   myHeaders.append("Authorization", "Basic STMyNzM1ODpzd2VldG1vbTkwMDg3MTg1NzEk");
   myHeaders.append("X-CSRF-Token",rescsrf.headers.get("X-CSRF-Token"));
   
