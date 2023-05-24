@@ -119,7 +119,7 @@ let idexec = text["id"];
       redirect: 'follow'
     };
     
-   let res = await fetch("https://https://saps1cbb8a8f.eu3.hana.ondemand.com/translationhub/api/v2/gitProjects/"+projid+"/executions/"+execid, requestOptions)
+   let res = await fetch("https://saps1cbb8a8f.eu3.hana.ondemand.com/translationhub/api/v2/gitProjects/"+projid+"/executions/"+execid, requestOptions)
    console.log(await res.text());
 
   }
