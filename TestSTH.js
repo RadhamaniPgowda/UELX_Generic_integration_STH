@@ -1,6 +1,7 @@
 
 require('dotenv').config();
 const PAT= process.env.PAT123;
+
 async function fetchcsrf() {
   let responsecsrf;
   var myHeaders = new Headers();
@@ -28,8 +29,8 @@ async function fetchcsrf() {
 //   .then(execution(responsecsrf1,createres));
 console.log("csrf:"+res.headers.get("X-CSRF-Token"));
 console.log("**************************");
-  var dd= process.env.PAT123
-console.log(dd);
+   
+console.log(process.env.PAT123);
   return res;
 }
 
@@ -62,7 +63,7 @@ async function create(res) {
     "credentials": {
       "user": "RadhamaniPgowda",
       "email": "radhamanip5@gmail.com",
-      "password": PAT
+      "password": process.env.PAT123
     }
   });
   
@@ -89,11 +90,11 @@ async function executionpull(rescsrf,id){
   myHeaders.append("Cookie", rescsrf.headers.get("Set-Cookie"));
   
   var raw = JSON.stringify({
-    "operation": "PULL_TRANSLATE_PUSH",
+    "operation": "PULL_TRANSLATE",
     "credentials": {
       "user": "RadhamaniPgowda",
       "email": "radhamanip5@gmail.com",
-      "password": PAT
+      "password": process.env.PAT123
     }
   });
   
@@ -147,7 +148,7 @@ async function executionpush(rescsrf,id){
     "credentials": {
       "user": "RadhamaniPgowda",
       "email": "radhamanip5@gmail.com",
-      "password": PAT
+      "password": process.env.PAT123
     }
   });
   
@@ -196,7 +197,7 @@ async function calls(){
   let id = await create(rescsrf);
   let exec = await executionpull(rescsrf,id);
   // await setTimeout(message,13000000);
-  //const myTimeout = await setTimeout(executionpush, 50000,rescsrf, id);
+  const myTimeout = await setTimeout(executionpush, 50000,rescsrf, id);
 
   // let execpush = await executionpush(rescsrf,id);
 
