@@ -1,5 +1,6 @@
 
 require('dotenv').config();
+const PAT= process.env.PAT123;
 async function fetchcsrf() {
   let responsecsrf;
   var myHeaders = new Headers();
@@ -61,7 +62,7 @@ async function create(res) {
     "credentials": {
       "user": "RadhamaniPgowda",
       "email": "radhamanip5@gmail.com",
-      "password": process.env.MY_PAT
+      "password": PAT
     }
   });
   
@@ -92,7 +93,7 @@ async function executionpull(rescsrf,id){
     "credentials": {
       "user": "RadhamaniPgowda",
       "email": "radhamanip5@gmail.com",
-      "password": process.env.MY_PAT
+      "password": PAT
     }
   });
   
@@ -146,7 +147,7 @@ async function executionpush(rescsrf,id){
     "credentials": {
       "user": "RadhamaniPgowda",
       "email": "radhamanip5@gmail.com",
-      "password": process.env.MY_PAT
+      "password": PAT
     }
   });
   
