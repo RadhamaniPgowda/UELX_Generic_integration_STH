@@ -1,7 +1,6 @@
 
 require('dotenv').config();
-const PAT= process.env.PAT123;
-
+console.log(process.env.PAT);
 async function fetchcsrf() {
   let responsecsrf;
   var myHeaders = new Headers();
@@ -28,9 +27,6 @@ async function fetchcsrf() {
 //   .then(createres=create(responsecsrf1))
 //   .then(execution(responsecsrf1,createres));
 console.log("csrf:"+res.headers.get("X-CSRF-Token"));
-console.log("**************************");
-   
-console.log(process.env.PAT123);
   return res;
 }
 
@@ -63,7 +59,7 @@ async function create(res) {
     "credentials": {
       "user": "RadhamaniPgowda",
       "email": "radhamanip5@gmail.com",
-      "password": process.env.PAT123
+      "password": process.env.PAT
     }
   });
   
@@ -94,7 +90,7 @@ async function executionpull(rescsrf,id){
     "credentials": {
       "user": "RadhamaniPgowda",
       "email": "radhamanip5@gmail.com",
-      "password": process.env.PAT123
+      "password": process.env.PAT
     }
   });
   
@@ -118,7 +114,7 @@ console.log("create res  :"+idexec);
   return idexec;
 }
 
-/*async function getexecutions(rescsrf,projid, execid){
+async function getexecutions(rescsrf,projid, execid){
   var myHeaders = new Headers();
   myHeaders.append("Authorization", "Basic STMyNzM1ODpzd2VldG1vbTkwMDg3MTg1NzEk");
   myHeaders.append("X-CSRF-Token",rescsrf.headers.get("X-CSRF-Token"));
@@ -133,12 +129,11 @@ console.log("create res  :"+idexec);
  console.log(await res.text());
 
  
-}*/
+}
 
 async function executionpush(rescsrf,id){
   var myHeaders = new Headers();
   myHeaders.append("X-CSRF-Token",rescsrf.headers.get("X-CSRF-Token"));
-  var myHeaders = new Headers();
   myHeaders.append("Authorization", "Basic STMyNzM1ODpzd2VldG1vbTkwMDg3MTg1NzEk");
   myHeaders.append("Content-Type", "application/json");
   myHeaders.append("Cookie", rescsrf.headers.get("Set-Cookie"));
@@ -148,10 +143,10 @@ async function executionpush(rescsrf,id){
     "credentials": {
       "user": "RadhamaniPgowda",
       "email": "radhamanip5@gmail.com",
-      "password": process.env.PAT123
+      "password": process.env.PAT
     }
   });
-  
+  console.log("RAW DATA"+raw)
   var requestOptions = {
     method: 'POST',
     headers: myHeaders,
@@ -161,7 +156,6 @@ async function executionpush(rescsrf,id){
   // let text =  await createres.json();
 
   // let id = text["id"];
-  console.log("project id in push to git"+id);
   let resultexe = await fetch("https://saps1cbb8a8f.eu3.hana.ondemand.com/translationhub/api/v2/gitProjects/"+id+"/executions", requestOptions)
   //   .then(response => response.text())
   //   .then(result => console.log(result))
@@ -173,7 +167,8 @@ console.log("create res push :"+idexec);
   return idexec;
 }
 
-/*async function getexecutions(rescsrf,projid, execid){
+async function getexecutions(rescsrf,projid, execid){
+  var myHeaders = new Headers();
   myHeaders.append("Authorization", "Basic STMyNzM1ODpzd2VldG1vbTkwMDg3MTg1NzEk");
   myHeaders.append("X-CSRF-Token",rescsrf.headers.get("X-CSRF-Token"));
   
@@ -187,7 +182,7 @@ console.log("create res push :"+idexec);
  console.log(await res.text());
 
 }
-*/
+
 
 function message() {
   console.log("waiting..............")
@@ -196,14 +191,18 @@ async function calls(){
   let  rescsrf = await fetchcsrf();
   let id = await create(rescsrf);
   let exec = await executionpull(rescsrf,id);
+  //let exec1 = await executionpush(rescsrf,id);
   // await setTimeout(message,13000000);
-  const myTimeout = await setTimeout(executionpush, 50000,rescsrf, id);
+  const myTimeout = await setTimeout(executionpush, 30000,rescsrf, id);
 
   // let execpush = await executionpush(rescsrf,id);
 
 
  
-//await setTimeout(message,13000000);
+await setTimeout(message,13000000);
   //await getexecutions(rescsrf,id, exec)
 }
+
+
+
 calls()
