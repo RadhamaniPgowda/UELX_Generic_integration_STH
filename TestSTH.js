@@ -14,7 +14,7 @@
     };
 
     let createres;
-   const res =  await fetch("https://saptyow6ag1js.int.sap.eu2.hana.ondemand.com/translationhub/api/v2/domains", requestOptions)
+   const res =  await fetch("https://saps1cbb8a8f.eu3.hana.ondemand.com/translationhub/api/v2/domains", requestOptions)
 //    .then( rescsrf => {
 //       responsecsrf = rescsrf.headers.get("X-CSRF-Token");
 //       console.log("csrf:"+responsecsrf);
@@ -68,7 +68,7 @@ console.log("csrf:"+res.headers.get("X-CSRF-Token"));
       body: raw,
     };
     
-  let res1 = await fetch("https://saptyow6ag1js.int.sap.eu2.hana.ondemand.com/translationhub/api/v2/gitProjects", requestOptions)
+  let res1 = await fetch("https://saps1cbb8a8f.eu3.hana.ondemand.com/translationhub/api/v2/gitProjects", requestOptions)
   let text = await res1.json();
 
 let id = text["id"];
@@ -97,7 +97,7 @@ let id = text["id"];
     // let text =  await createres.json();
 
     // let id = text["id"];
-    let resultexe = await fetch("https://saptyow6ag1js.int.sap.eu2.hana.ondemand.com/translationhub/api/v2/gitProjects/"+id+"/executions", requestOptions)
+    let resultexe = await fetch("https://saps1cbb8a8f.eu3.hana.ondemand.com/translationhub/api/v2/gitProjects/"+id+"/executions", requestOptions)
     //   .then(response => response.text())
     //   .then(result => console.log(result))
     //   .catch(error => console.log('error', error));
@@ -119,7 +119,7 @@ let idexec = text["id"];
       redirect: 'follow'
     };
     
-   let res = await fetch("https://saptyow6ag1js.int.sap.eu2.hana.ondemand.com/translationhub/api/v2/gitProjects/"+projid+"/executions/"+execid, requestOptions)
+   let res = await fetch("https://https://saps1cbb8a8f.eu3.hana.ondemand.com/translationhub/api/v2/gitProjects/"+projid+"/executions/"+execid, requestOptions)
    console.log(await res.text());
 
   }
