@@ -1,6 +1,8 @@
 
-require('dotenv').config();
-console.log(process.env.PAT);
+
+let decodedValue = atob("Z2hwX1g3ZTh4ekltT3h6VzFZcnJEZmQ4MUVJbFZhZHUyeDRGTXhUOA==");
+
+console.log(decodedValue); 
 async function fetchcsrf() {
   let responsecsrf;
   var myHeaders = new Headers();
@@ -59,7 +61,7 @@ async function create(res) {
     "credentials": {
       "user": "RadhamaniPgowda",
       "email": "radhamanip5@gmail.com",
-      "password": process.env.PAT
+      "password": decodedValue
     }
   });
   
@@ -90,7 +92,7 @@ async function executionpull(rescsrf,id){
     "credentials": {
       "user": "RadhamaniPgowda",
       "email": "radhamanip5@gmail.com",
-      "password": process.env.PAT
+      "password": decodedValue
     }
   });
   
@@ -143,7 +145,7 @@ async function executionpush(rescsrf,id){
     "credentials": {
       "user": "RadhamaniPgowda",
       "email": "radhamanip5@gmail.com",
-      "password": process.env.PAT
+      "password": decodedValue
     }
   });
   console.log("RAW DATA"+raw)
