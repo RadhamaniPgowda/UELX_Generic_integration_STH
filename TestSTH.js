@@ -41,7 +41,7 @@ async function create(res) {
         "branch": "master",
         "files": [
             {
-                "pathToFile": "src/test.properties"
+                "pathToFile": "src/i18n.properties"
             }
         ],
         "credentials": {
