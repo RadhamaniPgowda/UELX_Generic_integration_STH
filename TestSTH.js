@@ -37,7 +37,7 @@ async function create(res) {
         ],
         "importExistingTranslations": false,
         "gitType": "WEB",
-        "repository": "https://github.com/RadhamaniPgowda/TestRepo.git",
+        "repository": "https://github.com/RadhamaniPgowda/UELX_Generic_integration_STH.git",
         "branch": "master",
         "files": [
             {
