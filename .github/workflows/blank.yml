@@ -34,4 +34,4 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: execute STH workflow
         run: |
-          node TestSTH.js
+          node STH_Integration.js
