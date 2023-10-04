@@ -1,4 +1,4 @@
-let decodedValue = atob("Z2hwX1g3ZTh4ekltT3h6VzFZcnJEZmQ4MUVJbFZhZHUyeDRGTXhUOA==");
+let decodedValue = atob("Z2hwX0E1WWxQTGpwdFJOdzVzNEtTdmhLZ1liOWptYXNwdjFsZEhhTA==");
 async function fetchcsrf() {
     let responsecsrf;
     var myHeaders = new Headers();
