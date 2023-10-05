@@ -1,4 +1,4 @@
-/ Custom encode function
+// Custom encode function
 function customEncode(input) {
   return Array.from(input).map(char => char.charCodeAt(0).toString(16)).join('');
 }
