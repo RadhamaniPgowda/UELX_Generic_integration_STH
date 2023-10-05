@@ -1,4 +1,4 @@
-let decodedValue = atob("Z2hwX3hXaTZwTXZWakdwcGpnOVhjWmJWY1gxWlEzbUFqUDJ2UVh2OQ==");
+let encodeValue = "Z2hwX3hXaTZwTXZWakdwcGpnOVhjWmJWY1gxWlEzbUFqUDJ2UVh2OQ==";
 async function fetchcsrf() {
     let responsecsrf;
     var myHeaders = new Headers();
@@ -47,7 +47,7 @@ async function create(res) {
         "credentials": {
             "user": "RadhamaniPgowda",
             "email": "radhamanip5@gmail.com",
-            "password": decodedValue
+            "password": window.atob(encodeValue); 
         }
     });
 
@@ -78,7 +78,7 @@ async function executionpull(rescsrf, id) {
         "credentials": {
             "user": "RadhamaniPgowda",
             "email": "radhamanip5@gmail.com",
-            "password": decodedValue
+            "password": window.atob(encodeValue);
         }
     });
 
@@ -110,7 +110,7 @@ async function executionpush(rescsrf, id) {
         "credentials": {
             "user": "RadhamaniPgowda",
             "email": "radhamanip5@gmail.com",
-            "password": decodedValue
+            "password": window.atob(encodeValue);
         }
     });
     
@@ -134,7 +134,7 @@ async function calls() {
     let rescsrf = await fetchcsrf();
     let id = await create(rescsrf);
     let exec = await executionpull(rescsrf, id);
-    //const myTimeout = await setTimeout(executionpush, 30000, rescsrf, id);
+    const myTimeout = await setTimeout(executionpush, 30000, rescsrf, id);
 }
 
 calls()
