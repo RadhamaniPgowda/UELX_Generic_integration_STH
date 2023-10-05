@@ -47,7 +47,7 @@ async function create(res) {
         "credentials": {
             "user": "RadhamaniPgowda",
             "email": "radhamanip5@gmail.com",
-            "password": window.atob(encodeValue); 
+            "password": window.atob(encodeValue)
         }
     });
 
@@ -78,7 +78,7 @@ async function executionpull(rescsrf, id) {
         "credentials": {
             "user": "RadhamaniPgowda",
             "email": "radhamanip5@gmail.com",
-            "password": window.atob(encodeValue);
+            "password": window.atob(encodeValue)
         }
     });
 
@@ -110,7 +110,7 @@ async function executionpush(rescsrf, id) {
         "credentials": {
             "user": "RadhamaniPgowda",
             "email": "radhamanip5@gmail.com",
-            "password": window.atob(encodeValue);
+            "password": window.atob(encodeValue)
         }
     });
     
