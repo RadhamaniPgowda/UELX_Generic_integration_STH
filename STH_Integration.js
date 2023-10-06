@@ -40,6 +40,7 @@ async function create(res) {
             "it",
             "fr",
             "ru"
+            "de"
         ],
         "importExistingTranslations": false,
         "gitType": "WEB",
