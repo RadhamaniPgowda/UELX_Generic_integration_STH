@@ -39,7 +39,7 @@ async function create(res) {
         "targetLanguages": [
             "it",
             "fr",
-            "ru"
+            "ru",
             "de"
         ],
         "importExistingTranslations": false,
