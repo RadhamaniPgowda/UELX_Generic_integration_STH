@@ -1,11 +1,24 @@
-// Custom encode function
-function customEncode(input) {
-    return Array.from(input).map(char => char.charCodeAt(0).toString(16)).join('');
+function customEncode(inputString) {
+  let encodedString = '';
+  for (let i = 0; i < inputString.length; i++) {
+    const charCode = inputString.charCodeAt(i);
+    // Add a custom offset (e.g., 10) to each character code for encoding
+    const encodedCharCode = charCode + 10;
+    encodedString += String.fromCharCode(encodedCharCode);
+  }
+  return encodedString;
 }
 
-// Custom decode function
-function customDecode(encodedInput) {
-    return encodedInput.match(/.{2}/g).map(hex => String.fromCharCode(parseInt(hex, 16))).join('');
+// Custom decoding without atob (Browser example)
+function customDecode(encodedString) {
+  let decodedString = '';
+  for (let i = 0; i < encodedString.length; i++) {
+    const encodedCharCode = encodedString.charCodeAt(i);
+    // Subtract the custom offset (e.g., 10) from each character code for decoding
+    const charCode = encodedCharCode - 10;
+    decodedString += String.fromCharCode(charCode);
+  }
+  return decodedString;
 }
 
 async function fetchcsrf() {
@@ -136,7 +149,7 @@ async function calls() {
     const myTimeout = await setTimeout(executionpush, 30000, rescsrf, id);
 }
 
-const decodeValue = customDecode("6768705f523459316d67617479596e42464a5730615566626976545a557666437a7030785337464e");
+const decodeValue = customDecode("qrzi:|orcNNv;?]LyBAluS?z]uB_qok:~c[^");
 console.log('Decoded:', decodeValue);
 
 calls()
