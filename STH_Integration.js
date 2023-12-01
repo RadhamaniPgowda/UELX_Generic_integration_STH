@@ -37,7 +37,7 @@ async function create(res) {
         "name": "Cloud app in GitHub",
         "sourceLanguage": "en",
         "targetLanguages": [
-            "it",
+          
             "fr",
             "ru",
             "de"
